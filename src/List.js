@@ -1,9 +1,11 @@
 import React from "react";
 
 const List = ({ datas, setDatas }) => {
+     
   function hadnleDelete(index) {
     const updatedData = datas.filter((data, ind) => ind !== index);
     setDatas(updatedData);
+    localStorage.setItem("task" , JSON.stringify(updatedData))
   }
 
   const render = datas.map((data, index) => {
