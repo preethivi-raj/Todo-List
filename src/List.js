@@ -1,11 +1,10 @@
-import React from "react";
+import { PiTrashThin } from "react-icons/pi";
 
 const List = ({ datas, setDatas }) => {
-     
   function hadnleDelete(index) {
     const updatedData = datas.filter((data, ind) => ind !== index);
     setDatas(updatedData);
-    localStorage.setItem("task" , JSON.stringify(updatedData))
+    localStorage.setItem("task", JSON.stringify(updatedData));
   }
 
   const render = datas.map((data, index) => {
@@ -14,9 +13,9 @@ const List = ({ datas, setDatas }) => {
         <td>{index + 1}</td>
         <td>{data}</td>
         <td>
-          <button className="btn btn-error" onClick={() => hadnleDelete(index)}>
+          <PiTrashThin  className="cursor-pointer" onClick={() => hadnleDelete(index)}>
             Delete
-          </button>
+          </PiTrashThin>
         </td>
       </tr>
     );

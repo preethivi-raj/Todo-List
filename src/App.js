@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import List from "./List";
 
 
+
 function App() {
     
 const [text , setText] = useState()
 const [datas , setDatas] = useState([ ])
 const [search , setSearch] = useState("")
+
+
 
 useEffect( ()=>{
     const getData = ()=>{
@@ -24,7 +27,7 @@ const storeData = (text)=>{
      }
      let oldData = JSON.parse(localStorage.getItem("task"))
          oldData.push(text)
-
+         
      localStorage.setItem("task" , JSON.stringify(oldData))
 }
 const handleAdd = (e)=>{
@@ -38,7 +41,8 @@ const handleAdd = (e)=>{
 
   return (
     <div className="text-center">
-      <h1 className="text-6xl m-4 font-serif" >Todo List</h1>
+      <h1 className="text-6xl m-4 font-serif" >Todo List  </h1>
+      
         <div>
             <input
              type="text"
